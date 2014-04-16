@@ -3,16 +3,25 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>OpenSite</title>
+		<?php echo HTML::cssLinkTag('assets/css/opensite.css'); ?>
 	</head>
 	<body>
-		<header>
-			{header}
+		<header id="header" class="navbar navbar-default navbar-static-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<?php echo HTML::link('OpenSite', '/', array('class' => "navbar-brand")); ?>
+				</div>
+			</div>
 		</header>
 		<main>
-			<?php echo $content; ?>
+			<div class="container">
+				<?php echo $content; ?>
+			</div>
 		</main>
-		<footer>
-			<?php echo $t('powered_by'); ?>
+		<footer id="footer">
+			<div class="container">
+				<?php echo $t('powered_by'); ?>
+			</div>
 		</footer>
 	</body>
 </html>

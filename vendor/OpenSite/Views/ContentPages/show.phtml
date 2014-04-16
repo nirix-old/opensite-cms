@@ -1,1 +1,4 @@
-<h2><?php echo $page->title; ?></h2>
+<?php if ($page->show_title): ?>
+<h1><?php echo $page->title; ?></h1>
+<?php endif; ?>
+<?php echo $page->content; ?>

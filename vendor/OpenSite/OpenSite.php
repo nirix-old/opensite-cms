@@ -51,6 +51,13 @@ class OpenSite extends Application
         }
 
         require __DIR__ . '/Translations/enAU.php';
+
+        $this->aliasClasses();
+    }
+
+    protected function aliasClasses()
+    {
+        class_alias("Radium\Helpers\HTML", "HTML");
     }
 
     public static function version()

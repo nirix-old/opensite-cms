@@ -22,6 +22,11 @@ When contributing, please follow the [PSR-2][5] coding style guide.
 Once [Composer][2] is installed, simply run `composer install` to install the
 required dependencies.
 
+### Stylesheets
+
+Never edit the stylesheets directly, you'll need [Compass][3] to compile
+the `.scss` files in the `_dev/theme/sass` directory.
+
 ## License
 
 OpenSite is released under the [GNU General Public License v3][4].
