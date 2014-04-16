@@ -19,11 +19,20 @@
  * along with OpenSite. If not, see <http://www.gnu.org/licenses/>.
  */
 
-use Radium\Http\Router;
+namespace OpenSite\Models;
 
-Router::map(function($r){
-    $r->get('/admin')->to("OpenSite\Controllers\Admin\Dashboard::index");
-
-    $r->get('/register')->to('OpenSite\Controllers\Users::new');
-    $r->post('/register')->to('OpenSite\Controllers\Users::create');
-});
+/**
+ * User model.
+ *
+ * @package OpenSite\Models
+ * @author Jack P.
+ * @since 3.0
+ */
+class User extends \Radium\Database\Model
+{
+    protected static $_validates = array(
+        'username' => array('unique', 'required'),
+        'email'    => array('unique', 'required'),
+        'password' => array('required')
+    );
+}

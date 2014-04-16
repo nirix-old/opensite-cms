@@ -58,6 +58,8 @@ class OpenSite extends Application
     protected function aliasClasses()
     {
         class_alias("Radium\Helpers\HTML", "HTML");
+        class_alias("Radium\Helpers\Form", "Form");
+        class_alias("Radium\Http\Request", "Request");
     }
 
     public static function version()

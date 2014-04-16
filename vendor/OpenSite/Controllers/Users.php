@@ -19,11 +19,22 @@
  * along with OpenSite. If not, see <http://www.gnu.org/licenses/>.
  */
 
-use Radium\Http\Router;
+namespace OpenSite\Controllers;
 
-Router::map(function($r){
-    $r->get('/admin')->to("OpenSite\Controllers\Admin\Dashboard::index");
+use Radium\Http\Request;
+use OpenSite\Models\User;
 
-    $r->get('/register')->to('OpenSite\Controllers\Users::new');
-    $r->post('/register')->to('OpenSite\Controllers\Users::create');
-});
+/**
+ * Users controller.
+ *
+ * @package OpenSite\Controllers
+ * @author Jack P.
+ * @since 3.0
+ */
+class Users extends AppController
+{
+    public function newAction()
+    {
+        $this->set('user', new User);
+    }
+}

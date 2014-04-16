@@ -1,0 +1,38 @@
+<div class="registration container">
+	<div class="col-md-6 col-md-offset-3">
+		<h1><?php echo $t('Register'); ?></h1>
+		<form action="<?php echo Request::base('/register'); ?>" method="post" class="form-horizontal">
+			<div class="well">
+				<div class="form-group">
+					<?php echo Form::label($t('username'), 'user[username]', array('class' => 'control-label col-md-2')); ?>
+					<div class="col-md-10">
+						<?php echo Form::text('user[username]', array('class' => 'form-control')); ?>
+					</div>
+				</div>
+				<div class="form-group">
+					<?php echo Form::label($t('password'), 'user[password]', array('class' => 'control-label col-md-2')); ?>
+					<div class="col-md-10">
+						<?php echo Form::password('user[password]', array('class' => 'form-control')); ?>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-10 col-md-offset-2">
+						<?php echo Form::password(
+							'user[password]',
+							array('class' => 'form-control', 'placeholder' => $t('confirm_password'))
+						); ?>
+					</div>
+				</div>
+				<div class="form-group">
+					<?php echo Form::label($t('email'), 'user[email]', array('class' => 'control-label col-md-2')); ?>
+					<div class="col-md-10">
+						<?php echo Form::text('user[email]', array('class' => 'form-control')); ?>
+					</div>
+				</div>
+			</div>
+			<div class="form-actions">
+				<?php echo Form::submit($t('create_account'), array('class' => 'btn btn-success')); ?>
+			</div>
+		</form>
+	</div>
+</div>
